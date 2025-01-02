@@ -13,12 +13,10 @@ import { addUser } from '../service/serviceUser';
 
 const schema = yup
 .object({
-   // Id: yup.string("נוננננונונו").required("שדה חובה!"),
    Username: yup.string().required(" שדה חובה"),
    Password: yup.string().matches(/^[0-9]{4}$/, 'סיסמא חייבת להכיל  4 ספרות').required(" שדה חובה"),
    Name: yup.string().required(" שדה חובה"),
    Phone: yup.string().matches(/^[0-9]{7,10}$/, 'טלפון חייב להכיל בין 7 ל-10 ספרות').required(" שדה חובה"),
-   // Email: yup.string().email("כתובת המייל אינה תקינה").required(" שדה חובה"),
    Email: yup.string().matches(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/, 'יש להכניס כתובת מייל תקינה').required(" שדה חובה"),
    Tz: yup.string().matches(/^[0-9]{9}$/, 'תעודת זהות חייבת להכיל 9 ספרות בלבד').required(" שדה חובה"),
 }).required()
